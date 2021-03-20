@@ -1,0 +1,241 @@
+//font
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+$font-family: Barlow Semi Condensed, 'sans-serif';
+$body-font-size: 13px;
+
+//colors
+$violet: hsl(263, 55%, 52%);
+$dark-gray-blue: hsl(217, 19%, 35%);
+$light-gray-blue: hsl(210, 46%, 95%);
+$dark-black-blue: hsl(219, 29%, 14%);
+$white: hsl(0, 0%, 100%);
+$light-gray: hsl(0, 0%, 81%);
+
+$light-white: hsl(0, 0%, 70%);
+$lighter-white: hsl(0, 0%, 50%);
+
+//breakpoints
+$mobile: 375px;
+$midi: 600px;
+$tab: 1067px;
+
+%border {
+    border-radius: 7px;
+    padding: 30px;
+}
+
+%top{
+    display: flex;
+}
+
+%bottom{
+    margin-top: 15px;
+}
+
+%image{
+    border-radius: 100%;
+    width: 32px;
+    height: 32px;
+    margin-right: 17px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: $font-family;
+    background-color: $light-gray-blue;
+}
+
+
+.verified{
+    color: $lighter-white;
+    font-size: 11.5px;
+}
+
+.testimony{
+    color: $light-white;
+    font-size: 13px;
+    margin: 15px 0;
+    font-weight:500;
+}
+
+.container{
+    width: 1000px;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    grid-gap: 30px;
+    grid-template-rows: 1fr max-content;
+
+    @media only screen and (max-width: $mobile){
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        padding: 30px;
+    }
+    @media only screen and (max-width: $midi){
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        padding: 30px;
+    }
+
+
+    .grid__item-1{
+        background: url(./images/bg-pattern-quotation.svg);
+        background-repeat: no-repeat;
+        background-position: top 0 right 5.5rem;
+        background-color: $violet;
+        @extend %border;
+        color: $white;
+
+        grid-column: 1 / span 2;
+        grid-row: 1 / 2;
+
+        @media only screen and (max-width: $mobile){
+            background-position: top 0 right 2.5rem;
+        }
+        @media only screen and (max-width: $mobile){
+            background-position: top 0 right 1.5rem;
+        }
+       
+        &__top{
+           @extend %top;
+        }
+
+        &__bottom{
+            @extend %bottom;
+
+           .name, 
+           h3{
+               font-weight: 500;
+           }
+        }
+
+        img{
+           @extend %image;
+           border: 2px solid $lighter-white;
+        }
+
+    }
+
+    .grid__item-2{
+        background-color: $dark-gray-blue;
+        @extend %border;
+        color: $white;
+
+        grid-row: 1 / 2;
+
+        // grid-column: 3 / span 4;
+
+        &__top{
+            @extend %top;
+         }
+
+        img{
+            @extend %image;
+         }
+
+         &__bottom{
+            @extend %bottom;
+
+           .name, 
+           h3{
+               font-weight: 500;
+           }
+        }
+
+    }
+
+    .grid__item-3{
+        background-color: $white;
+        @extend %border;
+        color: $dark-gray-blue;
+
+        grid-column: 4 / 5;
+        grid-row: 1 / -1;
+
+        &__top{
+            @extend %top;
+         }
+
+        img{
+            @extend %image;
+            border: 2px solid $white;
+         }
+
+         &__bottom{
+            @extend %bottom;
+
+           .name, 
+           h3{
+               font-weight: 500;
+           }
+        }
+    }
+
+    .grid__item-4{
+        background-color: $white;
+        @extend %border;
+
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+
+        &__top{
+            @extend %top;
+         }
+
+        img{
+            @extend %image;
+            border: 2px solid $white;
+         }
+
+         &__bottom{
+            @extend %bottom;
+
+           .name, 
+           h3{
+               font-weight: 500;
+           }
+        }
+    }
+
+    .grid__item-5{
+        background-color: $dark-black-blue;
+        @extend %border;
+        color: $white;
+        
+        grid-column: 2 / span 2;
+        grid-row: 2 / 3;
+        &__top{
+            @extend %top;
+         }
+
+        img{
+            @extend %image;
+            border: 2px solid $violet;
+         }
+
+         &__bottom{
+            @extend %bottom;
+
+           .name, 
+           h3{
+               font-weight: 500;
+           }
+        }
+    }
+}
+
+
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+
+    a { color: hsl(228, 45%, 44%); }
+}
